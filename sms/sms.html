@@ -1,0 +1,70 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sms',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            username: {value:"", required:true},
+            password: {value:"", required:true},
+            ipaddress:{value:"", required:true},
+            port: {value:"", required:true},
+            receipent: {value:"", required:true},
+            message: {value:"", required:true}
+        },
+        credentials: {
+            username: {type:"text"},
+            password: {type:"password"}
+        },
+
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||this.username||this.password||this.ipaddress||this.port||this.receipent||this.message||"sms";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sms">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="icon-tag"></i> User Name</label>
+        <input type="text" id="node-input-username" placeholder="UserName">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="icon-tag"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ip"><i class="icon-tag"></i> IP Address</label>
+        <input type="text" id="node-input-ip" placeholder="IPAddress">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-recipient"><i class="icon-tag"></i> Recipient</label>
+        <input type="text" id="node-input-recipient" placeholder="Recipient">
+    </div>
+    <div class="form-row">
+        <label for="node-input-message"><i class="icon-tag"></i> Message</label>
+        <input type="text" id="node-input-message" placeholder="Message">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="sms">
+    <p>A simple node that sends a SMS message using the android Play app:</p>
+    <p>    SMS Gateway Ultimate.</p>
+    <p>Instructions:</p>
+    <p>1. Install SMS Gateway Ultimate from google play</p>
+    <p>2. Setup server on android phone (username,password,port,protocol,port)</p>
+    <p>3. Start the server on android phone and press info where you will get local ip</p>
+    <p>4. Phone and node-red must be on the same network or correct routes must </p>
+    <p>   be used or router forwarding must be applied</p>
+    <p>5. Enter information into the SMS parameter node</p>
+    <p>6. In httprequest node enter username and password</p>   
+</script>
