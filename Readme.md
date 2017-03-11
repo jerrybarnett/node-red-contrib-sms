@@ -10,3 +10,5 @@
    6. In httprequest node enter username and password
 
 Inspired by a flow from @github/srakovec 'Sending SMS from your own local Gateway'
+
+## NOTE- Currently in development, so not even sure if this is working yet.  Testing soon.
